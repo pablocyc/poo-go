@@ -10,6 +10,15 @@ type Course struct {
   Classes map[uint]string
 }
 
+func (c Course) PrintClasses() {
+  text := "Las clases son: "
+  for _, class := range c.Classes {
+    text += class + ", "
+  }
+
+  fmt.Println(text[:len(text) - 2])
+}
+
 func main() {
   Go := Course {
     "Go desde cero",
@@ -23,12 +32,5 @@ func main() {
     },
   }
 
-  css := Course{ Name: "CSS desde cero", IsFree: true }
-  js  := Course{}
-  js.Name = "JS desde cero"
-  js.UserIDs = []uint{12, 67}
-
-  fmt.Println(Go.Name)
-  fmt.Printf("%+v\n", css)
-  fmt.Printf("%+v", js)
+  Go.PrintClasses()
 }
