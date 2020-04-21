@@ -1,7 +1,9 @@
 package main
 
+import "fmt"
+
 func main() {
-  Go := Course {
+  Go := &Course {
     "Go desde cero",
     12.34,
     false,
@@ -14,4 +16,6 @@ func main() {
   }
 
   Go.PrintClasses()
+  Go.ChangePrice(67.12)
+  fmt.Println(Go.Price)
 }
